@@ -1,0 +1,29 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# User data file
+users.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
+
+# Test output
+htmlcov/
+coverage.xml
+*.cover
+
+#private
+privet/
