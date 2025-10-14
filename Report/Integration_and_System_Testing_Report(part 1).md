@@ -69,6 +69,49 @@ Each member performed one functional and one non-functional test on a selected m
 | Muditha Kumara | Performance | Simulate 50 concurrent orders | Python threading, response time | <2s per order | Pass |
 | Chuks Henry | Usability | Heuristic evaluation of checkout | User feedback, checklist | No critical usability issues | Pass |
 
+#### 4.2. Non-Functional Test Code: Performance (50 Concurrent Orders)
+
+```python
+import threading
+import time
+from Order_Placement import OrderPlacement, Cart, UserProfile, RestaurantMenu, PaymentMethod
+
+results = []
+
+def place_order_thread(index):
+    cart = Cart()
+    cart.add_item('Pizza', 10.0, 1)
+    user_profile = UserProfile(delivery_address=f'123 Main St #{index}')
+    menu = RestaurantMenu(available_items=['Pizza'])
+    order_placement = OrderPlacement(cart, user_profile, menu)
+    payment_method = PaymentMethod()
+    start = time.time()
+    result = order_placement.confirm_order(payment_method)
+    end = time.time()
+    elapsed = end - start
+    results.append((index, result, elapsed))
+    print(f"Order {index}: {result}, Time: {elapsed:.2f}s")
+
+threads = []
+for i in range(50):
+    t = threading.Thread(target=place_order_thread, args=(i+1,))
+    threads.append(t)
+    t.start()
+for t in threads:
+    t.join()
+
+# Summary
+under_2s = sum(1 for _, _, elapsed in results if elapsed < 2.0)
+print(f"\nOrders completed under 2 seconds: {under_2s}/50")
+```
+
+**How to run:**
+```bash
+python test_performance_50_orders.py
+```
+
+![alt text](image-3.png)
+
 ### 5. Reflections & Lessons Learned
 
 #### 5.1. Challenges
