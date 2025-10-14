@@ -112,6 +112,34 @@ python test_performance_50_orders.py
 
 ![alt text](image-3.png)
 
+#### 4.2. Non-Functional Test: Usability (Heuristic Evaluation of Checkout)
+
+**Usability Checklist (Nielsen’s Heuristics):**
+- Clarity of instructions and labels
+- Visibility of system status (confirmation/error messages)
+- Error prevention and handling
+- Consistency and standards
+- Ease of navigation (back/next options)
+- User control and freedom (cancel order)
+- Aesthetic and minimalist design
+
+**Evaluation Process:**
+- The checkout process was run in the application and evaluated against the checklist above.
+- Additional feedback was collected from two users who performed the checkout flow.
+
+**Findings:**
+- No critical usability issues found.
+- Positive feedback on clear confirmation messages and easy navigation.
+- Minor suggestions:
+  - Add clearer error messages for invalid payment details.
+  - Improve button labeling for “Back” and “Checkout” for better clarity.
+
+**Screenshot:**
+
+![alt text](image-4.png)
+
+---
+
 ### 5. Reflections & Lessons Learned
 
 #### 5.1. Challenges
