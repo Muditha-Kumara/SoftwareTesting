@@ -182,6 +182,30 @@ class TestPaymentProcessing(unittest.TestCase):
         result = self.payment_processing.process_payment(order, "bitcoin", payment_details)
         self.assertIn("Error: Invalid payment method", result)
 
+    def test_credit_card_15_digits(self):
+        """
+        Test case for validating a credit card with 15 digits (should pass if logic allows 15 digits).
+        """
+        payment_details = {"card_number": "123456789012345", "expiry_date": "12/25", "cvv": "123"}
+        result = self.payment_processing.validate_credit_card(payment_details)
+        self.assertTrue(result)  # Should pass if logic allows 15 digits
+
+    def test_credit_card_16_digits(self):
+        """
+        Test case for validating a credit card with 16 digits (standard length).
+        """
+        payment_details = {"card_number": "1234567812345678", "expiry_date": "12/25", "cvv": "123"}
+        result = self.payment_processing.validate_credit_card(payment_details)
+        self.assertTrue(result)
+
+    def test_credit_card_invalid_length(self):
+        """
+        Test case for validation failure due to invalid credit card length (too short).
+        """
+        payment_details = {"card_number": "1234567", "expiry_date": "12/25", "cvv": "123"}
+        result = self.payment_processing.validate_credit_card(payment_details)
+        self.assertFalse(result)
+
 
 if __name__ == "__main__":
     unittest.main()  # Run the unit tests.
