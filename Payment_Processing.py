@@ -44,6 +44,7 @@ class PaymentProcessing:
     def validate_credit_card(self, details):
         """
         Validates the credit card details (e.g., card number, expiry date, CVV).
+        Accepts card numbers with 15 or 16 digits.
         
         Args:
             details (dict): A dictionary containing 'card_number', 'expiry_date', and 'cvv'.
@@ -55,8 +56,8 @@ class PaymentProcessing:
         expiry_date = details.get("expiry_date", "")
         cvv = details.get("cvv", "")
 
-        # Basic validation: Check if the card number is 16 digits and CVV is 3 digits.
-        if len(card_number) != 16 or len(cvv) != 3:
+        # Accept card numbers with 15 or 16 digits and CVV with 3 digits.
+        if len(card_number) not in (15, 16) or len(cvv) != 3:
             return False
 
         # More advanced validations like the Luhn Algorithm for card number can be added here.
