@@ -60,6 +60,7 @@ class Cart:
     def add_item(self, name, price, quantity):
         """
         Adds a new item to the cart or updates the quantity of an existing item.
+        Raises ValueError if quantity is zero or negative.
         
         Args:
             name (str): Name of the item.
@@ -69,6 +70,8 @@ class Cart:
         Returns:
             str: A message indicating whether the item was added or updated.
         """
+        if quantity <= 0:
+            raise ValueError("Quantity must be positive")
         for item in self.items:
             if item.name == name:
                 # If the item is already in the cart, update its quantity.
@@ -343,6 +346,18 @@ class TestOrderPlacement(unittest.TestCase):
             result = self.order.confirm_order(payment_method)
             self.assertFalse(result["success"])
             self.assertEqual(result["message"], "Payment failed")
+
+    def test_add_item_invalid_quantity(self):
+        """
+        Test case for adding an item with an invalid (zero or negative) quantity.
+        """
+        with self.assertRaises(ValueError) as context:
+            self.cart.add_item("Burger", 8.99, 0)
+        self.assertEqual(str(context.exception), "Quantity must be positive")
+
+        with self.assertRaises(ValueError) as context:
+            self.cart.add_item("Pizza", 12.99, -1)
+        self.assertEqual(str(context.exception), "Quantity must be positive")
 
 
 if __name__ == "__main__":
