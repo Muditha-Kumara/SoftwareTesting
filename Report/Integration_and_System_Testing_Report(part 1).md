@@ -42,14 +42,14 @@ This report documents the application of integration and system testing methods,
 
 | Test Case | Description | Expected Result | Actual Result | Pass/Fail |
 | :-------- | :---------- | :-------------- | :------------ | :-------- |
-| TC1 | Place order with valid cart and payment | Order confirmed, payment processed | Success, order ID returned | Pass |
-| TC2 | Place order with invalid payment (stubbed failure) | Payment declined, order not confirmed | Failure message shown | Pass |
-| TC3 | Place order with unavailable menu item | Error message, order not placed | Error shown | Pass |
+| TC1 | Place order with valid cart and payment | Order confirmed, payment processed | Success message returned (e.g., 'Payment successful, Order confirmed') | Pass |
+| TC2 | Place order with invalid payment (stubbed failure) | Payment declined, order not confirmed | Failure message returned as plain string (e.g., 'Payment failed, please try again') | Pass |
+| TC3 | Place order with unavailable menu item | Error message, order not placed | Error message shown | Pass |
 
 #### 3.4. Key Findings
-- Top-down integration exposed UI-to-backend communication issues early.
+- Top-down integration exposed UI-to-backend communication issues early (e.g., test assertion needed to match actual output format).
 - Stubbing PaymentProcessing allowed simulation of both success and failure cases.
-- Error handling for unavailable items and payment failures worked as expected.
+- Error handling for unavailable items and payment failures worked, but failure was returned as a plain message string rather than a structured error object.
 
 ### 4. System Testing
 
@@ -86,6 +86,86 @@ Each member performed one functional and one non-functional test on a selected m
 ### 6. Attachments & Evidence
 - Screenshots of test runs and coverage reports (see attached images).
 - Sample output logs from performance and usability tests.
+
+### 7. Test Code & Execution Evidence
+
+#### 7.1. Integration Test Code Example
+
+```python
+import unittest
+from Order_Placement import OrderPlacement, Cart, UserProfile, RestaurantMenu, PaymentMethod
+
+class TestIntegrationOrderPlacement(unittest.TestCase):
+    def setUp(self):
+        self.cart = Cart()
+        self.cart.add_item('Pizza', 10.0, 2)
+        self.user_profile = UserProfile(delivery_address='123 Main St')
+        self.menu = RestaurantMenu(available_items=['Pizza', 'Burger'])
+        self.order_placement = OrderPlacement(self.cart, self.user_profile, self.menu)
+        self.payment_method = PaymentMethod()
+
+    def test_place_order_success(self):
+        result = self.order_placement.confirm_order(self.payment_method)
+        print(result)
+        self.assertTrue(result['success'])
+
+    def test_place_order_unavailable_item(self):
+        self.cart.add_item('Sushi', 12.0, 1)  # Not in menu
+        result = self.order_placement.validate_order()
+        print(result)
+        self.assertFalse(result['success'])
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+#### 7.2. System Test Code Example
+
+```python
+import unittest
+from Payment_Processing import PaymentProcessing
+
+class TestSystemPaymentProcessing(unittest.TestCase):
+    def setUp(self):
+        self.processor = PaymentProcessing()
+        self.order = {'total_amount': 100.0}
+        self.valid_details = {'card_number': '1234567812345678', 'expiry_date': '12/25', 'cvv': '123'}
+        self.invalid_details = {'card_number': '1111222233334444', 'expiry_date': '12/25', 'cvv': '123'}
+
+    def test_valid_payment(self):
+        result = self.processor.process_payment(self.order, 'credit_card', self.valid_details)
+        print(result)
+        self.assertIn('success', result)
+
+    def test_invalid_payment(self):
+        result = self.processor.process_payment(self.order, 'credit_card', self.invalid_details)
+        print(result)
+        self.assertIn('failed', result)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+#### 7.3. How to Execute & Capture Results
+
+1. Save the above test code in separate files (e.g., `test_integration_order_placement.py`, `test_system_payment_processing.py`).
+2. Run each test using the command:
+   ```bash
+   python test_integration_order_placement.py
+   python test_system_payment_processing.py
+   ```
+3. Capture screenshots of the terminal output and coverage reports.
+4. Attach the screenshots below:
+
+
+**Coverage Report:**
+![alt text](image-2.png)
+
+#### 7.4. Actual Test Output Log
+
+![alt text](image.png)
+
+![alt text](image-1.png)
 
 ---
 
