@@ -1,0 +1,76 @@
+Part 1: Integration and System Testing for MobileFoodDeliveryApp
+The first part is designed to deepen your understanding of integration and system testing. You will work in your groups to apply at least one integration testing approach to the existing modules of the MobileFoodDeliveryApp. Additionally, each group member will perform one functional and one non-functional system test on a feature or module of their choice.
+
+Assignment Description
+Integration Testing
+
+Choose one of the three integration testing strategies:
+Top-Down: Integrate from the highest-level modules down, using stubs for unfinished lower-level modules.
+Bottom-Up: Start with the lowest-level modules, using drivers to simulate higher-level modules.
+Sandwich (Hybrid): Combine top-down and bottom-up approaches simultaneously.
+Apply the chosen approach to a functional area of the MobileFoodDeliveryApp. Examples include:
+Order Placement module integrating with Payment and Notification services.
+User Authentication module integrating with Profile Management and Order History.
+System Testing
+
+Each group member will conduct:
+One Functional Test: Validate the system’s behavior against a user story or requirement. For instance:
+Ensuring the Payment screen processes valid credit card details correctly.
+Verifying that the Order Tracking page displays real-time status updates.
+One Non-Functional Test: Assess the system’s performance, usability, security, or another non-functional requirement. Examples include:
+Performance Test: For example, using a tool to simulate multiple concurrent users placing orders.
+Usability Test: For example, running a user feedback session or a quick heuristic evaluation of the Checkout process.
+Security Test: For example, checking for any open vulnerabilities related to unauthorized order cancellation or personal data leaks.
+Steps
+Clarify Roles
+
+Assign each member a clear role (e.g., Test Lead, Integration Specialist, System Tester).
+Choose Your Integration Strategy
+
+Identify the modules in the MobileFoodDeliveryApp that you will test.
+Decide whether your group will use Top-Down, Bottom-Up, or Sandwich integration testing.
+List the stubs or drivers you need and the sequence of integration (if required).
+Plan the Integration Tests
+
+Map out the specific interactions you will test. For example:
+Top-Down might begin by testing the App Controller with stubs for PaymentService and NotificationService.
+Bottom-Up might start with Database Access and PaymentProcessor, then move upwards.
+Sandwich might test the Login Workflow from the top while simultaneously validating low-level Data Access modules.
+Document your plan, including test scenarios, expected results, and how you will handle pass/fail criteria.
+Conduct the System Tests
+
+Each member picks one functional and one non-functional test:
+Functional Test:
+Select a requirement or user story.
+Identify acceptance criteria and design test cases.
+Non-Functional Test:
+Choose a relevant non-functional aspect, such as performance, security, or usability.
+Use an appropriate tool
+Define metrics (e.g., response times, throughput, error rates) and criteria for success.
+Execute and Record Results
+
+Perform the planned integration and system tests within your group.
+Log findings, issues, and anomalies.
+If using automated tools, export or screenshot relevant reports.
+Analyze Outcomes and Propose Improvements
+
+Discuss any defects or performance gaps discovered.
+Suggest fixes and optimizations for the MobileFoodDeliveryApp modules.
+Reflect on the effectiveness of the integration method and testing approach chosen.
+Submission Requirements
+Integration Testing Report
+
+Which approach (Top-Down, Bottom-Up, or Sandwich) was used and why.
+The modules tested, test cases covered, and key findings.
+System Testing Report
+
+Summary of each member’s functional and non-functional test, including:
+Test Cases (for functional) and Metrics (for non-functional).
+Tools or frameworks used.
+Results (pass/fail criteria, performance metrics, or usability findings).
+Reflections
+
+Challenges faced in integrating modules.
+Observations on system stability, usability, or performance.
+Lessons learned about the importance of both integration and system testing in real-world software projects.
+Use screenshots or short screencasts to illustrate issues or performance results.
