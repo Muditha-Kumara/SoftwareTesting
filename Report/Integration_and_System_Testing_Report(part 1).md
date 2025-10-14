@@ -13,7 +13,7 @@ This report documents the application of integration and system testing methods,
 | **Group Members** | Muditha Kumara ([muditha.kumara@centria.fi](mailto:muditha.kumara@centria.fi)), Chuks Henry |
 | **Date Submitted** | 15/10/2025 |
 | **App Version/Commit** | Alpha 1.0 |
-| **Code Repository** | https://github.com/Muditha-Kumara/SoftwareTesting/tree/2.1.phase1 |
+| **Code Repository** | [https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1](https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1) |
 
 ### 2. Roles & Responsibilities
 
