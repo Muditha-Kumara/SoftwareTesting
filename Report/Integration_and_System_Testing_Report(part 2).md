@@ -12,8 +12,8 @@ This report documents the application of Acceptance Testing (UAT) methodologies,
 | :---- | :---- |
 | **Assignment Name** | Part 2: Acceptance Testing and User Testing of the MobileFoodDeliveryApp |
 | **Course** | Software Testing (Autumn 2025) |
-| **Group Members** | Muditha Kumara, Chuks Henry |
-| **Date Submitted** | 15/10/2025 |
+| **Group Members** | Muditha Kumara, Chuks Isiozor |
+| **Date of submission** | 15/10/2025 |
 | **App Version/Commit** | Alpha 1.0 (MobileFoodDeliveryApp.zip) |
 | **Code Repository** | [https://github.com/Muditha-Kumara/SoftwareTesting/blob/3.2/Report/Integration_and_System_Testing_Report(part%202).md](https://github.com/Muditha-Kumara/SoftwareTesting/blob/3.2/Report/Integration_and_System_Testing_Report(part%202).md) |
 
@@ -24,7 +24,7 @@ This report documents the application of Acceptance Testing (UAT) methodologies,
 | Member | Role |
 | :----- | :--- |
 | Muditha Kumara | Product Owner, QA Tester |
-| Chuks Henry | Stakeholder/End-User |
+| Chuks Isiozor | Stakeholder/End-User |
 
 ---
 
@@ -101,9 +101,9 @@ uat_test_cases:
 - **Participants:** QA Tester, Product Owner
 - **Environment:** Local development
 - **Summary:**  
-  All acceptance criteria tested internally. Minor UI issues found (e.g., button labels), but core flows work. No critical bugs.
+  All acceptance criteria tested internally. Minor UI issues found ( button labels for instance), but core flows work. No critical bugs.
 - **Evidence:**  
-  Screenshots of registration, login, cart, and checkout screens (to be attached).
+  Screenshots of registration, login, cart, and checkout screens (are attached).
 
 #### Beta Testing (Simulated User Session)
 
@@ -112,11 +112,11 @@ uat_test_cases:
 - **Summary:**  
   User feedback positive. Suggestions for clearer error messages and improved navigation. All test cases passed.
 - **Evidence:**  
-  User feedback notes (to be attached).
+  User feedback notes (are attached).
 
 ---
 
-### 6. Reflections & Lessons Learned
+### 6. Reflections 
 
 #### Challenges
 - Simulating real user feedback without external testers.
@@ -127,12 +127,12 @@ uat_test_cases:
 - User feedback is valuable for UI/UX improvements.
 - Role-playing helps uncover usability issues.
 
-#### Lessons Learned
+#### Lessons 
 - Acceptance testing validates real-world readiness.
 - User involvement is key for usability improvements.
 
 #### Recommendations
-- Add more detailed error messages for failed registration and payment.
+- It would be nice to add more detailed error messages for failed registration and payment.
 - Improve button labeling and navigation.
 - Involve more users in Beta testing for broader feedback.
 
@@ -142,8 +142,8 @@ uat_test_cases:
 
 - Screenshots of test runs (registration, login, cart, checkout)
 - User feedback notes
-- Coverage report (if available)
+- Coverage report 
 
 ---
 
-*End of Report*
+
