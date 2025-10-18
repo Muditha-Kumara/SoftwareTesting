@@ -10,8 +10,8 @@ This report documents the application of integration and system testing methods,
 | :---- | :---- |
 | **Assignment Name** | Part 1: Integration and System Testing of the MobileFoodDeliveryApp |
 | **Course** | Software Testing (Autumn 2025) |
-| **Group Members** | Muditha Kumara ([muditha.kumara@centria.fi](mailto:muditha.kumara@centria.fi)), Chuks Henry |
-| **Date Submitted** | 15/10/2025 |
+| **Group Members** | Muditha Kumara ([muditha.kumara@centria.fi](mailto:muditha.kumara@centria.fi)), Chuks Isiozor (chuks.isiozor@centria.fi) |
+| **Date of submission** | 15/10/2025 |
 | **App Version/Commit** | Alpha 1.0 (MobileFoodDeliveryApp.zip) |
 | **Code Repository** | [https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1](https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1) |
 
@@ -20,7 +20,7 @@ This report documents the application of integration and system testing methods,
 | Member | Role |
 | :----- | :--- |
 | Muditha Kumara | Test Lead, Integration Specialist |
-| Chuks Henry | System Tester |
+| Chuks Isiozor | System Tester |
 
 ### 3. Integration Testing
 
@@ -28,7 +28,7 @@ This report documents the application of integration and system testing methods,
 
 **Approach:** Top-Down Integration Testing
 
-**Rationale:** This approach allows us to validate the main application flow early, using stubs for unfinished lower-level modules (e.g., Payment and Notification services). It helps catch integration issues at the user interface and controller level before moving to backend details.
+**Rationale:** This approach allows my team to validate the main application flow early, using stubs for unfinished lower-level modules (for instance, Payment and Notification services). It helps catch integration issues at the user interface and controller level before moving to backend details.
 
 #### 3.2. Modules & Sequence
 
@@ -60,14 +60,14 @@ Each member performed one functional and one non-functional test on a selected m
 | Member | Module | Test Case | Acceptance Criteria | Result |
 | :----- | :----- | :-------- | :----------------- | :----- |
 | Muditha Kumara | Payment_Processing.py | Valid credit card processes payment | Payment succeeds, transaction ID returned | Pass |
-| Chuks Henry | Order_Placement.py | Add item to cart and place order | Item added, order confirmed | Pass |
+| Chuks Isiozor | Order_Placement.py | Add item to cart and place order | Item added, order confirmed | Pass |
 
 #### 4.2. Non-Functional Tests
 
 | Member | Aspect | Test Type | Metric/Tool | Criteria | Result |
 | :----- | :----- | :-------- | :---------- | :------- | :----- |
 | Muditha Kumara | Performance | Simulate 50 concurrent orders | Python threading, response time | <2s per order | Pass |
-| Chuks Henry | Usability | Heuristic evaluation of checkout | User feedback, checklist | No critical usability issues | Pass |
+| Chuks Isiozor | Usability | Heuristic evaluation of checkout | User feedback, checklist | No critical usability issues | Pass |
 
 #### 4.2. Non-Functional Test Code: Performance (50 Concurrent Orders)
 
@@ -140,7 +140,7 @@ python test_performance_50_orders.py
 
 ---
 
-### 5. Reflections & Lessons Learned
+### 5. Reflections 
 
 #### 5.1. Challenges
 - Creating realistic stubs for PaymentProcessing required careful design.
@@ -240,4 +240,4 @@ if __name__ == '__main__':
 
 ---
 
-*End of Report*
+
