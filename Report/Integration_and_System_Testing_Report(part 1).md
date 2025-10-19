@@ -11,7 +11,7 @@ This report documents the application of integration and system testing methods,
 | **Assignment Name** | Part 1: Integration and System Testing of the MobileFoodDeliveryApp |
 | **Course** | Software Testing (Autumn 2025) |
 | **Group Members** | Muditha Kumara ([muditha.kumara@centria.fi](mailto:muditha.kumara@centria.fi)), Isiozor(chuks.isiozor@centria.fi) |
-| **Date Submitted** | 15/10/2025 |
+| **Date Submitted** | 20/10/2025 |
 | **App Version/Commit** | Alpha 1.0 (MobileFoodDeliveryApp.zip) |
 | **Code Repository** | [https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1](https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1) |
 
