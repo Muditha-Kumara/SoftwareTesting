@@ -69,6 +69,9 @@ class Cart:
         Returns:
             str: A message indicating whether the item was added or updated.
         """
+        if quantity <= 0:
+            raise ValueError("Quantity must be greater than zero.")
+
         for item in self.items:
             if item.name == name:
                 # If the item is already in the cart, update its quantity.
@@ -343,6 +346,20 @@ class TestOrderPlacement(unittest.TestCase):
             result = self.order.confirm_order(payment_method)
             self.assertFalse(result["success"])
             self.assertEqual(result["message"], "Payment failed")
+
+    def test_add_zero_quantity(self):
+        """
+        Test case for adding an item with zero quantity to the cart.
+        """
+        with self.assertRaises(ValueError):
+            self.cart.add_item("Burger", 8.99, 0)
+
+    def test_add_negative_quantity(self):
+        """
+        Test case for adding an item with negative quantity to the cart.
+        """
+        with self.assertRaises(ValueError):
+            self.cart.add_item("Burger", 8.99, -1)
 
 
 if __name__ == "__main__":

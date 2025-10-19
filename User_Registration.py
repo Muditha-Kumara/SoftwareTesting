@@ -127,5 +127,31 @@ class TestUserRegistration(unittest.TestCase):
         self.assertFalse(result['success'])  # Ensures registration fails due to the email already being registered.
         self.assertEqual(result['error'], "Email already registered")  # Checks the specific error message.
 
+    def test_password_exact_min_length(self):
+        """
+        Test case for password that is exactly at the minimum length limit.
+        It verifies that a password with the minimum required length and containing both letters and numbers is accepted.
+        """
+        result = self.registration.register("user@example.com", "Passwrd1", "Passwrd1")
+        self.assertTrue(result['success'])  # Ensures that registration is successful.
+
+    def test_password_missing_digit(self):
+        """
+        Test case for password missing a digit.
+        It verifies that a password without any digits is rejected.
+        """
+        result = self.registration.register("user@example.com", "Password", "Password")
+        self.assertFalse(result['success'])  # Ensures registration fails due to a weak password.
+        self.assertEqual(result['error'], "Password is not strong enough")  # Checks the specific error message.
+
+    def test_password_missing_letter(self):
+        """
+        Test case for password missing a letter.
+        It verifies that a password without any letters is rejected.
+        """
+        result = self.registration.register("user@example.com", "12345678", "12345678")
+        self.assertFalse(result['success'])  # Ensures registration fails due to a weak password.
+        self.assertEqual(result['error'], "Password is not strong enough")  # Checks the specific error message.
+
 if __name__ == '__main__':
     unittest.main()
