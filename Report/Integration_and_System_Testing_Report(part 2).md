@@ -12,8 +12,8 @@ This report documents the application of Acceptance Testing (UAT) methodologies,
 | :---- | :---- |
 | **Assignment Name** | Part 2: Acceptance Testing and User Testing of the MobileFoodDeliveryApp |
 | **Course** | Software Testing (Autumn 2025) |
-| **Group Members** | Muditha Kumara, Chuks Henry |
-| **Date Submitted** | 15/10/2025 |
+| **Group Members** | Muditha Kumara, Isiozor(chuks.isiozor@centria.fi) |
+| **Date Submitted** | 20/10/2025 |
 | **App Version/Commit** | Alpha 1.0 (MobileFoodDeliveryApp.zip) |
 | **Code Repository** | [https://github.com/Muditha-Kumara/SoftwareTesting/blob/3.2/Report/Integration_and_System_Testing_Report(part%202).md](https://github.com/Muditha-Kumara/SoftwareTesting/blob/3.2/Report/Integration_and_System_Testing_Report(part%202).md) |
 
