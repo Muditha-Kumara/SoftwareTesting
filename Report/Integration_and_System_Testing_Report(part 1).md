@@ -10,7 +10,7 @@ This report documents the application of integration and system testing methods,
 | :---- | :---- |
 | **Assignment Name** | Part 1: Integration and System Testing of the MobileFoodDeliveryApp |
 | **Course** | Software Testing (Autumn 2025) |
-| **Group Members** | Muditha Kumara ([muditha.kumara@centria.fi](mailto:muditha.kumara@centria.fi)), Chuks Henry |
+| **Group Members** | Muditha Kumara ([muditha.kumara@centria.fi](mailto:muditha.kumara@centria.fi)), Isiozor(chuks.isiozor@centria.fi) |
 | **Date Submitted** | 15/10/2025 |
 | **App Version/Commit** | Alpha 1.0 (MobileFoodDeliveryApp.zip) |
 | **Code Repository** | [https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1](https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1) |
@@ -57,12 +57,17 @@ Each member performed one functional and one non-functional test on a selected m
 
 #### 4.1. Functional Tests
 
+**Code Review Fixes Commit Reference:** [`4fa81df`](https://github.com/Muditha-Kumara/SoftwareTesting/commit/4fa81df) (generated via `git rev-parse --short HEAD`)
+
+
 | Member | Module | Test Case | Acceptance Criteria | Result |
 | :----- | :----- | :-------- | :----------------- | :----- |
 | Muditha Kumara | Payment_Processing.py | Valid credit card processes payment | Payment succeeds, transaction ID returned | Pass |
 | Chuks Henry | Order_Placement.py | Add item to cart and place order | Item added, order confirmed | Pass |
 
 #### 4.2. Non-Functional Tests
+
+**Code Review Fixes Commit Reference:** [`0358df6`](https://github.com/Muditha-Kumara/SoftwareTesting/commit/0358df6) (generated via `git rev-parse --short HEAD`)
 
 | Member | Aspect | Test Type | Metric/Tool | Criteria | Result |
 | :----- | :----- | :-------- | :---------- | :------- | :----- |
@@ -157,10 +162,11 @@ python test_performance_50_orders.py
 ### 6. Attachments & Evidence
 - Screenshots of test runs and coverage reports (see attached images).
 - Sample output logs from performance and usability tests.
+- **Repository Link:** [https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1](https://github.com/Muditha-Kumara/SoftwareTesting/tree/3.1)
 
 ### 7. Test Code & Execution Evidence
 
-#### 7.1. Integration Test Code Example
+#### 7.1. Integration Test Code
 
 ```python
 import unittest
@@ -190,7 +196,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-#### 7.2. System Test Code Example
+#### 7.2. System Test Code
 
 ```python
 import unittest
@@ -216,18 +222,6 @@ class TestSystemPaymentProcessing(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 ```
-
-#### 7.3. How to Execute & Capture Results
-
-1. Save the above test code in separate files (e.g., `test_integration_order_placement.py`, `test_system_payment_processing.py`).
-2. Run each test using the command:
-   ```bash
-   python test_integration_order_placement.py
-   python test_system_payment_processing.py
-   ```
-3. Capture screenshots of the terminal output and coverage reports.
-4. Attach the screenshots below:
-
 
 **Coverage Report:**
 ![alt text](image-2.png)

@@ -1,5 +1,3 @@
-# ...existing code...
-
 ## 📄 Integration and System Testing Report
 
 The full report for integration and system testing is available here:
