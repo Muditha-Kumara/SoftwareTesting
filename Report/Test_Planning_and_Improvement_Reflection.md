@@ -119,7 +119,7 @@ test_case:
 
 ## 7. Git Commit Reference
 
-- Commit: [`0970992`](https://github.com/Muditha-Kumara/SoftwareTesting/commit/0970992)  
+- Commit: [`693b3f8`](https://github.com/Muditha-Kumara/SoftwareTesting/commit/693b3f8)  
 
 ---
 
