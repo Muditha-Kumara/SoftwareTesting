@@ -4,7 +4,7 @@
 This document addresses the requirements of Assignment 4, which asks for a critical review and enhancement of previous test planning and documentation work, using the best practices from Module 4 (Formal Test Planning, Documentation, Risk Analysis, and Ethical G-AI Usage).
 
 ## 1. Original Work Reviewed
-- **Reviewed Artifact:** [Integration and System Testing Report (Part 1)](./Integration_and_System_Testing_Report(part%201).md)
+- **Reviewed Artifact:** [Integration and System Testing Report (Part 1)](https://github.com/Muditha-Kumara/SoftwareTesting/blob/3.1/Report/Integration_and_System_Testing_Report(part%201).md)
 - **Reason for Selection:** This report comprehensively documented integration and system testing for the MobileFoodDeliveryApp, including test strategies, scenarios, code, and lessons learned. It is a suitable foundation for applying new best practices.
 
 ## 2. Critical Self-Assessment
