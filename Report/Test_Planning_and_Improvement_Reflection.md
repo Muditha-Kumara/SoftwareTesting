@@ -119,8 +119,8 @@ test_case:
 
 ## 7. Git Commit Reference
 
-- Commit: `your_commit_hash_here`  
-  
+- Commit: [`0970992`](https://github.com/Muditha-Kumara/SoftwareTesting/commit/0970992)  
+
 ---
 
 *End of Reflection and Improvements*
